@@ -15,7 +15,7 @@
 2. Navigate to the project directory:
 
     ```bash
-    cd yourrepository
+    cd your_project_dir
     ```
 
 3. Create a virtual environment:
