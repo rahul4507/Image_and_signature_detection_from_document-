@@ -9,7 +9,7 @@
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/yourrepository.git
+    git clone https://github.com/rahul4507/Bynry_Gas_Utility_Service.git
     ```
 
 2. Navigate to the project directory:
@@ -78,7 +78,3 @@
     ```
 
 2. Open your web browser and navigate to `http://localhost:8000`.
-
-## Contributing
-
-Please read `CONTRIBUTING.md` for details on our code of conduct, and the process for submitting pull requests to us.
