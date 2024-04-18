@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="text-right p-4">
+  <button type="button" class="btn btn-success " onclick="window.location.href='{% url 'service_request:create' %}'">Raise Request</button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">SR ID</th>
+            <th scope="col">Service Type</th>
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
+            <th scope="col">Requested On</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if service_requests.count != 0 %}
+            {% for sr in service_requests %}
+            <tr>
+                <th scope="row">{{ sr.id }}</th>
+                <td>{{ sr.type }}</td>
+                <td>{{ sr.description }}</td>
+                <td>{{ sr.status }}</td>
+                <td>{{ sr.created_at }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="5" class="text-center">No service requests found.</td>
+            </tr>
+        {% endif %} 
+    </tbody>
+</table>
+  </table>
+{% endblock %}
