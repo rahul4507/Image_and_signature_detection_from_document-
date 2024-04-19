@@ -81,5 +81,5 @@
 
 ## Sample User Creds for checking
 
-username = omker
+username = omkar
 password = User@123
