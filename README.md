@@ -79,7 +79,7 @@
 
 2. Open your web browser and navigate to `http://localhost:8000`.
 
-##Sample User Creds for checking
+## Sample User Creds for checking
 
 username = omker
 password = User@123
