@@ -9,7 +9,7 @@
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/rahul4507/Bynry_Gas_Utility_Service.git
+    git clone https://github.com/rahul4507/Image_and_signature_detection_from_document-.git
     ```
 
 2. Navigate to the project directory:
