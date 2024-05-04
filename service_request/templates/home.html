@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-end mt-4">
+        <div class="col-auto">
+            <button type="button" class="btn btn-success" onclick="window.location.href='{% url 'service_request:create' %}'">Raise Request</button>
+        </div>
+    </div>
+    
+    {% if sig_detect_path %}
+
+    <div class="image-container">
+        <h2>Detected Signature</h2>
+        <img src="{% static sig_detect_path %}" class="img-fluid" alt="Detected Signature" style="max-width: 100%; height: auto;">
+    </div>
+    {% else %}
+    <div class="row mt-4">
+        <div class="col">
+            <div class="alert alert-info" role="alert">
+               Signature not Detected.
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
