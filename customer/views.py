@@ -12,6 +12,7 @@ class RegistrationView(View):
     def post(self, request):
         form = CustomerRegisterForm(request.POST)
         if form.is_valid():
+            print(form.cleaned_data)
             form.save()
             return redirect('customer:login')  # Redirect to login page after successful registration
         return render(request, 'register.html', {'form': form})

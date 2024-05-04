@@ -58,7 +58,7 @@
         <h5 class="card-title">Customer Registration</h5>
       </div>
       <div class="card-body">
-        <form method="post">
+        <form id="registrationForm" method="post" onsubmit="return validateForm()">
           {% csrf_token %}
           {% for field in form %}
             <div class="form-group">
@@ -82,9 +82,38 @@
     </div>
   </div>
 
+    <script>
+        function validateForm() {
+            var firstName = document.forms["registrationForm"]["id_first_name"].value.trim();
+            var lastName = document.forms["registrationForm"]["id_last_name"].value.trim();
+            var email = document.forms["registrationForm"]["id_email"].value.trim();
+            var password = document.forms["registrationForm"]["id_password"].value.trim();
+
+            if (firstName === "") {
+                alert("First name must not be empty.");
+                return false;
+            }
+            if (lastName === "") {
+                alert("Last name must not be empty.");
+                return false;
+            }
+            if (email === "") {
+                alert("Email must not be empty.");
+                return false;
+            }
+            if (password === "") {
+                alert("Password must not be empty.");
+                return false;
+            }
+            return true;
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+

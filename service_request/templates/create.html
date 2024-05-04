@@ -13,11 +13,17 @@
             <div class="form-group">
               <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
               {{ field }}
+              {% if field.name == 'your_file_field_name_here' %} {# Replace 'your_file_field_name_here' with the actual name of your file input field #}
+                <small class="text-muted">Only JPG files allowed.</small>
+              {% endif %}
             </div>
           {% endfor %}
           <button type="submit" class="btn btn-primary mt-3">Submit</button>
         </form>
       </div>
     </div>
+  </div>
+  <div class="text-center">
+    <a href="{% url 'service_request:home' %}" class="btn btn-primary mt-3">Back</a>
   </div>
 {% endblock %}

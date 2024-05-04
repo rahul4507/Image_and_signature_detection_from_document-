@@ -1,36 +1,28 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-  <div class="text-right p-4">
-  <button type="button" class="btn btn-success " onclick="window.location.href='{% url 'service_request:create' %}'">Raise Request</button>
-  </div>
-  <table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">SR ID</th>
-            <th scope="col">Service Type</th>
-            <th scope="col">Description</th>
-            <th scope="col">Status</th>
-            <th scope="col">Requested On</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% if service_requests.count != 0 %}
-            {% for sr in service_requests %}
-            <tr>
-                <th scope="row">{{ sr.id }}</th>
-                <td>{{ sr.type }}</td>
-                <td>{{ sr.description }}</td>
-                <td>{{ sr.status }}</td>
-                <td>{{ sr.created_at }}</td>
-            </tr>
-            {% endfor %}
-        {% else %}
-            <tr>
-                <td colspan="5" class="text-center">No service requests found.</td>
-            </tr>
-        {% endif %} 
-    </tbody>
-</table>
-  </table>
+<div class="container">
+    <div class="row justify-content-end mt-4">
+        <div class="col-auto">
+            <button type="button" class="btn btn-success" onclick="window.location.href='{% url 'service_request:create' %}'">Raise Request</button>
+        </div>
+    </div>
+    
+    {% if sig_detect_path %}
+
+    <div class="image-container">
+        <h2>Detected Signature</h2>
+        <img src="{% static sig_detect_path %}" class="img-fluid" alt="Detected Signature" style="max-width: 100%; height: auto;">
+    </div>
+    {% else %}
+    <div class="row mt-4">
+        <div class="col">
+            <div class="alert alert-info" role="alert">
+               Signature not Detected.
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
 {% endblock %}

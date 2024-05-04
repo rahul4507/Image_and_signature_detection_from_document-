@@ -7,8 +7,8 @@ class CustomerRegisterForm(UserCreationForm):
 
     class Meta:
         model = Customer
-        fields = ('username', 'registration_id', 'branch', 'password1', 'password2')
+        fields = ('username','password1', 'password2')
 
-
+    
 class LoginForm(AuthenticationForm):
     pass
